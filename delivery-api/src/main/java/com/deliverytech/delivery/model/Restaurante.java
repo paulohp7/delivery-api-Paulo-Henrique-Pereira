@@ -27,10 +27,15 @@ public class Restaurante {
 
     private BigDecimal taxaEntrega;
 
+    private BigDecimal avaliacao;
+
     private Integer tempoEntregaMinutos;
 
     private Boolean ativo = true;
 
     @OneToMany(mappedBy = "restaurante", cascade = CascadeType.ALL)
     private List<Produto> produtos;
+
+    @OneToMany(mappedBy = "restaurante")
+    private List<Pedido> pedidos;
 }

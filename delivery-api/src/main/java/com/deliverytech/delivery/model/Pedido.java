@@ -13,27 +13,28 @@ import java.util.List;
 @Builder
 public class Pedido {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Builder.Default
+    private LocalDateTime dataPedido = LocalDateTime.now();
+    // private LocalDateTime dataPedido;
+    @Embedded
+    private Endereco enderecoEntrega;
+    // private String enderecoEntrega;
+    private String observacoes;
+    private BigDecimal subtotal;
+    private BigDecimal taxaEntrega;
+    private BigDecimal valorTotal;
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
-
     @ManyToOne
     @JoinColumn(name = "restaurante_id")
     private Restaurante restaurante;
-
-    private BigDecimal total;
-
-    @Enumerated(EnumType.STRING)
-    private StatusPedido status;
-
-    private LocalDateTime dataPedido = LocalDateTime.now();
-
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
     private List<ItemPedido> itens;
 
-    @Embedded
-    private Endereco enderecoEntrega;
 }

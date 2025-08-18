@@ -11,7 +11,8 @@ import java.math.BigDecimal;
 @Builder
 public class ItemPedido {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -25,4 +26,6 @@ public class ItemPedido {
     private Integer quantidade;
 
     private BigDecimal precoUnitario;
+
+    private BigDecimal subtotal;
 }

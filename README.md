@@ -8,6 +8,12 @@ Projeto DeliveryAPI do curso de Arquitetura de Sistemas da FAT
 - H2 Database
 - Maven
 
+## 🏃‍♂️ Como executar
+1. **Pré-requisitos:** JDK 21 instalado
+2. Clone o repositório
+3. Execute: `./mvnw spring-boot:run`
+4. Acesse: http://localhost:8080/health
+
 ## 📋 Endpoints
 - GET /health - Status da aplicação (inclui versão Java)
 - GET /info - Informações da aplicação

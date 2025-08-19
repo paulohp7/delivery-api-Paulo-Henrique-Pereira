@@ -25,5 +25,4 @@ Projeto DeliveryAPI do curso de Arquitetura de Sistemas da FAT
 - Profile: development
 
 ## 👨‍💻 Desenvolvedor
-Paulo Henrique Pereira - TI56 02726 - Arquitetura de Sistemas
-Desenvolvido com JDK 21 e Spring Boot 3.5.4
+- Paulo Henrique Pereira - TI56 02726 - Arquitetura de Sistemas

@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "produtos")
 public class Produto {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +23,7 @@ public class Produto {
 
     private BigDecimal preco;
 
-    private Boolean disponivel = true;
+    private Boolean disponivel;
 
     @ManyToOne
     @JoinColumn(name = "restaurante_id")

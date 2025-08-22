@@ -75,6 +75,12 @@ public class ClienteService {
         clienteRepository.save(cliente);
     }
 
+    // Buscar clientes por nome
+    @Transactional(readOnly = true)
+    public List<Cliente> buscarPorNome(String nome) {
+        return clienteRepository.findByNomeContainingIgnoreCase(nome);
+    }
+
     // Validação dos dados do cliente
     private void validarDadosCliente(Cliente cliente) {
         if (cliente.getNome() == null || cliente.getNome().trim().isEmpty()) {

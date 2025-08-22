@@ -22,7 +22,7 @@ public interface PedidoRepository extends JpaRepository<Pedido, Long> {
     List<Pedido> findByStatusOrderByDataPedidoDesc(StatusPedido status);
 
     // Buscar por número do pedido
-    // Pedido findByNumeroPedido(String numeroPedido);
+    Pedido findByNumeroPedido(String numeroPedido);
 
     // Buscar pedidos por período
     List<Pedido> findByDataPedidoBetweenOrderByDataPedidoDesc(LocalDateTime inicio,

@@ -86,6 +86,7 @@ public class PedidoService {
     }
 
     // Listar pedidos por cliente
+    // Falta tratamento de exceção caso cliente não exista ou cliente sem produtos
     @Transactional(readOnly = true)
     public List<Pedido> listarPorCliente(Long clienteId) {
         return pedidoRepository.findByClienteIdOrderByDataPedidoDesc(clienteId);
@@ -98,10 +99,10 @@ public class PedidoService {
     }
 
     // Buscar por número do pedido
-    // @Transactional(readOnly = true)
-    // public Optional<Pedido> buscarPorNumero(String numeroPedido) {
-    //    return Optional.ofNullable(pedidoRepository.findByNumeroPedido(numeroPedido));
-    //}
+    @Transactional(readOnly = true)
+    public Optional<Pedido> buscarPorNumero(String numeroPedido) {
+       return Optional.ofNullable(pedidoRepository.findByNumeroPedido(numeroPedido));
+    }
 
     // Cancelar pedido
     public Pedido cancelarPedido(Long pedidoId, String motivo) {

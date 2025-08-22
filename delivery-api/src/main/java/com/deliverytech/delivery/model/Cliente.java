@@ -10,6 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "clientes")
 public class Cliente {
 
     @Id
@@ -23,10 +24,12 @@ public class Cliente {
 
     private String telefone;
 
+    // String simples, ainda implementando o Endereco como entidade separada
     private String endereco;
 
-    private Boolean ativo = true;
+    private Boolean ativo;
 
+    @Builder.Default
     private LocalDateTime dataCriacao = LocalDateTime.now();
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)

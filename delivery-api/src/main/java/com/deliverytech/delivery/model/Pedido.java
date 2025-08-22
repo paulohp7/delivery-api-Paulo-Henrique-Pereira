@@ -11,17 +11,20 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "pedidos")
 public class Pedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String numeroPedido;
     @Builder.Default
     private LocalDateTime dataPedido = LocalDateTime.now();
     // private LocalDateTime dataPedido;
-    @Embedded
-    private Endereco enderecoEntrega;
-    // private String enderecoEntrega;
+    // Implementando o Endereco como entidade separada
+    // @Embedded
+    // private Endereco enderecoEntrega;
+    private String enderecoEntrega;
     private String observacoes;
     private BigDecimal subtotal;
     private BigDecimal taxaEntrega;
